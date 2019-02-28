@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>defer属性练习</title>
+    <title>async属性练习</title>
 </head>
 <body>
     <script>
+        window.addEventListener('load', () => {
+            console.log("load");
+        });
         window.addEventListener('DOMContentLoaded', () => {
-            console.log("DOMContendLoaded");
+            console.log('DOMContentLoaded');
         });
     </script>
-    <script src="./test1.1.js" defer></script>
-    <script src="./test1.2.js" defer></script>
+    <script src="test2.1.js" async></script>
+    <script src="test2.2.js" async></script>
 </body>
 </html>
