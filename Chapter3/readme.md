@@ -87,3 +87,21 @@ console.log(NaN == NaN); //false
 ### 数值转换
 #### 有三个函数可以把非数值转换为数值：Number()、parseInt()、parseFloat()。第一个函数，即转型函数Number()可以用于任何数据类型，而另两个函数则专门用于把字符串转换成数值。
 #### parseInt()可以转换二进制、八进制、十进制的数字，但要在第二个参数，明确转换的位数；parseFloat只能转换十进制。
+
+### String类型
+#### 字符串的特点
+##### ECMAScript中的字符串是不可变的，也就是说，字符串一旦创建，它们的值就不能改变。要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量。
+##### toString()把一个值转换为字符串，数字默认转换为十进制的字符串表示形式，可以传进制进去，null、undefined不能使用toString()方法，报错，这时候可以使用String()转型函数，null、undefined转型后结果依然是null、undefined。还可以用加号操作符，把该值+""
+
+### Object类型
+#### ECMAScript中的对象其实就是一组数据和功能的集合。
+#### ECMAScript中，Object类型是所有它的实例的基础。换句话说，Object类型所具有的任何属性和方法也同样存在于更具体的对象中。
+#### Object的每个实例都具有下列属性和方法
+- `constructor`: 保存着用于创建当前对象的函数。
+- `hasOwnProperty(propertyName)`: 用于检查给定的属性在当前对象实例中（而不是实例原型中）是否存在。其中，作为参数的属性名（propertyName）必须以字符串形式指定（例如： o.hasOwnProperty("name")）
+- `isPrototypeOf(object)`: 用于检查传入的对象是否是当前对象的原型。
+- `propertyIsEnumerable(propertyName)`: 用于检查给定的属性是否能够使用for-in语句来枚举。与hasOwnProperty()方法一样，作为参数的属性名必须以字符串形式指定。
+- `toLocaleString()`: 返回对象的字符串表示，该字符串与执行环境的地区对应。
+- `toString()`: 返回对象的字符串表示。
+- `valueOf()`: 返回对象的字符串、数值或布尔值表示。通常与toString()方法的返回值相同。
+> 从技术角度讲，ECMA-262中对象的行为不一定适用于JavaScript中的其他对象。浏览器环境中的对象，比如BOM和DOM中的对象，都属于宿主对象，因为它们是由宿主实现提供和定义的。ECMA-262不负责定义宿主对象，因此宿主对象可能会也会能不会继承Object。
